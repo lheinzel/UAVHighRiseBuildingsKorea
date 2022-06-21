@@ -1,7 +1,19 @@
+from genericpath import exists
+from turtle import end_fill
 from xml.dom import HierarchyRequestErr
 from PIL import Image as Img
 import os
 import math
+import xml_to_csv
+
+
+def initDirectories(listDirs):
+    for dir in listDirs:
+        
+        if not os.path.exists(dir):
+            os.mkdir(listDirs);
+        
+
 
 def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY):
     # Get files in directory
@@ -67,14 +79,19 @@ def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY):
 
 
 if __name__ == "__main__" :
-    pathSource = "ImagesRaw";
-    pathTarget = "ImagesCropped";
+    pathPictureSource = "ImagesRaw";
+    pathPictureTarget = "ImagesCropped";
 
+    pathLabelSource = "LabelsRaw";
+    pathLabelTarget = "LabelsCropped\LabelsTarget";
+    pathLabelTargetEmpty = "LabelsCropped\LabelsEmpty";
 
-    if not os.path.exists(pathTarget):
-        os.mkdir(pathTarget);
+    listDirs = [pathPictureTarget,pathLabelTarget,pathLabelTargetEmpty];
 
-    generateCroppedImages(pathSource, pathTarget, 640, 640, 100, 100);
+    # initialize directories for cropped files and labels
+    initDirectories(listDirs);
+
+    #generateCroppedImages(pathPictureSource, pathPictureTarget, 640, 640, 100, 100);
 
 
 
