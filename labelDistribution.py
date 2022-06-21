@@ -2,10 +2,37 @@ import os
 import numpy as np
 import pandas as pd
 from PIL import Image
+import glob
+import xml.etree.ElementTree as ET
+
+def initDirectories(listDirs):
+    for dir in listDirs:
+        if not os.path.exists(dir):
+            os.makedirs(dir,exist_ok=True);
 
 
+def xml_to_csv(xmlFilePath, targetFilePath):
+    dataList = [];
+    tree = ET.parse(xmlFilePath)
+    root = tree.getroot()
+    for member in root.findall('object'):
+        value = (root.find('filename').text,
+                    int(root.find('size')[0].text),
+                    int(root.find('size')[1].text),
+                    member[0].text,
+                    int(member[4][0].text),
+                    int(member[4][1].text),
+                    int(member[4][2].text),
+                    int(member[4][3].text)
+                    )
+        dataList.append(value);
+        
+    column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
+    xml_df = pd.DataFrame(dataList,columns=column_name)
+    xml_df.to_csv(targetFilePath, index=None, sep= ';')
 
-def createLabelCSVForCroppedImage(sourceFile, sourceImage, targetDir, emptyDir, localPicSize, stride, minLblOverlap, label):
+
+def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir, localPicSize, stride, minLblOverlap, label):
   #read-in csv-file with labels from original picture
   labels = pd.read_csv(sourceFile, delimiter = ';')
 
@@ -73,6 +100,10 @@ def createLabelCSVForCroppedImage(sourceFile, sourceImage, targetDir, emptyDir, 
     # get grid coordinates starting by [0,0]
     grid_coord = [(np.floor((i-1)/nbr_of_elements_y)).astype(int), (i-1) % nbr_of_elements_y]
 
+    # name of the image 
+    imageName = os.path.split(sourceImage)[1].split(".")[0];
+    imageName += ("_" + str(grid_coord[0]) + "-" + str(grid_coord[1]))
+
     # get position of recent picture
     # -> check for changed stride 
     if(bool_x_stride & (grid_coord[0] == nbr_of_elements_x - 1)):
@@ -95,87 +126,106 @@ def createLabelCSVForCroppedImage(sourceFile, sourceImage, targetDir, emptyDir, 
     in_x_range = (labels['max_pos_x'] >= grid_coord[0]) & (labels['min_pos_x'] <= grid_coord[0])
     in_y_range = (labels['max_pos_y'] >= grid_coord[1]) & (labels['min_pos_y'] <= grid_coord[1])
 
-    # file path for csv file 
-    imageName = os.path.split(sourceImage)[1].split(".")[0];
-    imageName += ("_" + str(grid_coord[0]) + "-" + str(grid_coord[1]))
-
     # get Data Frame with labels which match with coordinates 
     # check for a hit
+    nbr_of_df +=1
+
     if ((in_x_range & in_y_range).any()):
-      nbr_of_df +=1
       df = labels.loc[in_x_range & in_y_range]
-      dim_y_df = df.shape[0]
-      
-      # only for checking (debugging)
-      #df_old = df.copy()
-      #-------------------
+    else:
+      df = pd.DataFrame(columns=labels.columns)
+
+    dim_y_df = df.shape[0]
     
-      # create new Data Frame for output
-      df_out = pd.DataFrame(index=range(dim_y_df), columns = df.columns[:8])
+    # only for checking (debugging)
+    #df_old = df.copy()
+    #-------------------
+  
+    # create new Data Frame for output
+    df_out = pd.DataFrame(index=range(dim_y_df), columns = df.columns[:8])
 
-      # add fixed values to df
-      df_out[df.columns[0]] = imageName + '_' + str(i) # needs to fit with the actual name
-      df_out[df.columns[1]] = localPicSize[0]
-      df_out[df.columns[2]] = localPicSize[1]
-      df_out[df.columns[3]] = label
+    # add fixed values to df
+    df_out[df.columns[0]] = imageName + '_' + str(i) # needs to fit with the actual name
+    df_out[df.columns[1]] = localPicSize[0]
+    df_out[df.columns[2]] = localPicSize[1]
+    df_out[df.columns[3]] = label
 
-      # get values from Data Frame df 
-      x_min_df = df['xmin'].to_numpy()
-      x_max_df = df['xmax'].to_numpy()
-      y_min_df = df['ymin'].to_numpy()
-      y_max_df = df['ymax'].to_numpy()
+    # get values from Data Frame df 
+    x_min_df = df['xmin'].to_numpy()
+    x_max_df = df['xmax'].to_numpy()
+    y_min_df = df['ymin'].to_numpy()
+    y_max_df = df['ymax'].to_numpy()
 
-      # iterate over arrays (same size) to update borders of labels
-      # xmax if x_max > xmax else x_max etc.
-      for j in range(x_min_df.size):
-        # set xmax
-        if(x_max_df[j] >= x_max):
-          x_max_df[j] = localPicSize[0]
-        else:
-          x_max_df[j] = x_max_df[j] - x_min
-        # set xmin
-        if(x_min > x_min_df[j]):
-          x_min_df[j] = 0
-        else:
-          x_min_df[j] = x_min_df[j] - x_min
-        # set ymax
-        if(y_max_df[j] > y_max):
-          y_max_df[j] = localPicSize[1]
-        else:
-          y_max_df[j] = y_max_df[j] - y_min
-        # set ymin
-        if(y_min > y_min_df[j]):
-          y_min_df[j] = 0
-        else:
-          y_min_df[j] = y_min_df[j]  - y_min
+    # iterate over arrays (same size) to update borders of labels
+    # xmax if x_max > xmax else x_max etc.
+    for j in range(x_min_df.size):
+      # set xmax
+      if(x_max_df[j] >= x_max):
+        x_max_df[j] = localPicSize[0]
+      else:
+        x_max_df[j] = x_max_df[j] - x_min
+      # set xmin
+      if(x_min > x_min_df[j]):
+        x_min_df[j] = 0
+      else:
+        x_min_df[j] = x_min_df[j] - x_min
+      # set ymax
+      if(y_max_df[j] > y_max):
+        y_max_df[j] = localPicSize[1]
+      else:
+        y_max_df[j] = y_max_df[j] - y_min
+      # set ymin
+      if(y_min > y_min_df[j]):
+        y_min_df[j] = 0
+      else:
+        y_min_df[j] = y_min_df[j]  - y_min
 
-      # update output Data Frame
-      df_out['xmin'] = x_min_df
-      df_out['xmax'] = x_max_df
-      df_out['ymin'] = y_min_df
-      df_out['ymax'] = y_max_df
+    # update output Data Frame
+    df_out['xmin'] = x_min_df
+    df_out['xmax'] = x_max_df
+    df_out['ymin'] = y_min_df
+    df_out['ymax'] = y_max_df
 
-      # optional: if distance between xmax and xmin to small -> drop column
-      mask = ((df_out['xmax']-df_out['xmin']) < minLblOverlap) | ((df_out['ymax']-df_out['ymin']) < minLblOverlap)
-      df_out.drop(df_out.loc[mask].index, inplace=True)
+    # optional: if distance between xmax and xmin to small -> drop column
+    mask = ((df_out['xmax']-df_out['xmin']) < minLblOverlap) | ((df_out['ymax']-df_out['ymin']) < minLblOverlap)
+    df_out.drop(df_out.loc[mask].index, inplace=True)
 
-      # exporting csv file 
+    # exporting csv file 
+    if df_out.empty:
+      csvFilepath = os.path.join(emptyDir,(imageName + ".csv"))
+      df_out.to_csv(csvFilepath, index=False, sep=';') 
+    else:
       csvFilepath = os.path.join(targetDir,(imageName + ".csv"))
       df_out.to_csv(csvFilepath, index=False, sep=';') 
+ 
 
-    # If no labels match the image, create empty .csv and save it separately
-    else:
-      df = labels.loc[in_x_range & in_y_range]
-      dim_y_df = df.shape[0]
-      df_out = pd.DataFrame(index=range(dim_y_df), columns = df.columns[:8])
 
-      csvFilepath = os.path.join(emptyDir,(imageName + ".csv"))
-      df_out.to_csv(csvFilepath, index=False, sep=';')
-    
+def distributeLabels(sourceFile, sourceImage, labelDir, localPicSize, stride, minLblOverlap, label): 
+  # directories for the label .csv files
+  imageName = os.path.split(sourceImage)[1].split(".")[0]
+  targetDir = os.path.join(labelDir,"LabelsTarget",imageName)
+  emptyDir = os.path.join(labelDir,"LabelsEmpty",imageName)
 
-sourceImage = r"ImagesRaw\Sejong_2013_1.png";
-sourceFile = r"LabelsRaw\labels_UL.csv";
-targetDir = r"LabelsCropped\LabelsTarget";
-emptyDir = r"LabelsCropped\LabelsEmpty";
+  # Make sure the target directories for the distributed labels exist
+  dirList = [labelDir,targetDir, emptyDir];
+  initDirectories(dirList);
 
-createLabelCSVForCroppedImage(sourceFile,sourceImage,targetDir,emptyDir,[640,640],100,10,"HR_building")
+  # Convert the xml to a csv file
+  pathCSVFull = os.path.join(os.path.split(sourceFile)[0],(imageName + "_lbl.csv"))
+  xml_to_csv(sourceFile, pathCSVFull)
+
+  # Create the .csv files of the labels for the cropped images
+  createLabelCSVForCroppedImages(pathCSVFull,sourceImage,targetDir,emptyDir,localPicSize,stride,minLblOverlap,label)
+
+
+
+
+
+
+if __name__=="__main__":
+  sourceImage = r"ImagesRaw\Sejong_2013_1.png";
+  sourceFile = r"LabelsRaw\Sejong_2013_1_Test.xml";
+  labelDir = r"LabelsCropped";
+
+
+  distributeLabels(sourceFile,sourceImage,labelDir,[640,640],100,10,"HR_building")
