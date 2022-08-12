@@ -306,7 +306,7 @@ if __name__ == "__main__" :
     pathLabelSource = r"DataRaw/Labels";
     pathLabelTarget = r"DataAugmented/Labels";
 
-    #generateCroppedImages(pathPictureSource, pathPictureTarget, 640, 640, 100, 100);
+    generateCroppedImages(pathPictureSource, pathPictureTarget, 640, 640, 100, 100);
 
     distributeLabels(pathLabelSource,pathPictureSource,pathLabelTarget,[640,640],100,10,"HR_building", ".png")
 
