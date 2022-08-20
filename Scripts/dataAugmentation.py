@@ -1,4 +1,5 @@
-from genericpath import exists
+from asyncio import gather
+from multiprocessing.sharedctypes import Value
 from turtle import end_fill
 from xml.dom import HierarchyRequestErr
 from PIL import Image as Img
@@ -17,9 +18,9 @@ def initDirectories(listDirs):
         
 
 
-def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY):
+def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY, imgFileExt):
     # Get files in directory
-    sourceNames = [elem for elem in os.listdir(sourcePath) if elem.split(".")[1] == "png"];
+    sourceNames = [elem for elem in os.listdir(sourcePath) if elem.split(".")[1] == imgFileExt];
 
     # raise error if no .png files found
     if not sourceNames:
@@ -47,10 +48,12 @@ def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY):
 
         # If the stride on the border images (difference to the previous image regarding translation) is too small,
         # do not utilize the border regions
-        if stdRX < 50 or stdRY < 50:
-            stdRX = 0;
+        if stdRX < strideX/2:
+          stdRX = 0;
+          nSlicesX -= 1;
+
+        if stdRY < strideY/2:
             stdRY = 0;
-            nSlicesX -= 1;
             nSlicesY -= 1;
 
 
@@ -65,7 +68,7 @@ def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY):
 
             for indY in range(nSlicesY):
                 strdYCurrent = strideY if (indY < nSlicesY-2 or stdRY == 0) else stdRY;
-                fNameImgCropped = pictureFile.split(".")[0] + "_" + str(indX) + "-" + str(indY) + ".png";
+                fNameImgCropped = pictureFile.split(".")[0] + "_" + str(indX) + "-" + str(indY) + "." + imgFileExt;
                 fPathImgCropped = os.path.join(targetPathCurrent,fNameImgCropped);
                 imgCropped = imageCurrent.crop((xStart,yStart,xStart+dimX,yStart+dimY));
                 imgCropped.save(fPathImgCropped);
@@ -106,7 +109,7 @@ def xml_to_csv(xmlFilePath, targetFilePath):
     xml_df.to_csv(targetFilePath, index=None, sep= ';')
 
 
-def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir, localPicSize, stride, minLblOverlap, label):
+def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir, localPicSize, stride, label):
   #read-in csv-file with labels from original picture
   labels = pd.read_csv(sourceFile, delimiter = ';')
 
@@ -117,7 +120,7 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
   #---------------------------------------------------
   ## calculate shapes
 
-  #get x and y dimention of image: [x,y]
+  #get x and y dimension of image: [x,y]
   glb_pic_size = im_as_array.shape[1::-1]
 
   # calculate number of elements
@@ -260,10 +263,6 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
     df_out['ymin'] = y_min_df
     df_out['ymax'] = y_max_df
 
-    # optional: if distance between xmax and xmin to small -> drop column
-    mask = ((df_out['xmax']-df_out['xmin']) < minLblOverlap) | ((df_out['ymax']-df_out['ymin']) < minLblOverlap)
-    df_out.drop(df_out.loc[mask].index, inplace=True)
-
     # exporting csv file 
     if df_out.empty:
       csvFilepath = os.path.join(emptyDir,(imageName + ".csv"))
@@ -274,7 +273,7 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
  
 
 
-def distributeLabels(lblSourceDir, imgSourceDir, lblDir, localPicSize, stride, minLblOverlap, label, imgFileExt): 
+def distributeLabels(lblSourceDir, imgSourceDir, lblDir, fldNameEmpty, fldNameNonempty ,localPicSize, stride, label, imgFileExt): 
   
   # iterate over all label xmls
   lblFileList = os.listdir(lblSourceDir);
@@ -283,10 +282,10 @@ def distributeLabels(lblSourceDir, imgSourceDir, lblDir, localPicSize, stride, m
     if fname.split(".")[1] == "xml":
         # directories for the label .csv files
         imageName = os.path.split(fname)[1].split(".")[0]
-        targetDir = os.path.join(lblDir,"Detection",imageName)
-        emptyDir = os.path.join(lblDir,"Empty",imageName)
+        targetDir = os.path.join(lblDir,fldNameNonempty,imageName)
+        emptyDir = os.path.join(lblDir, fldNameEmpty ,imageName)
         lblSourceFile = os.path.join(lblSourceDir,fname);
-        imgSourceFile = os.path.join(imgSourceDir,imageName) + imgFileExt;
+        imgSourceFile = os.path.join(imgSourceDir,imageName) + "." + imgFileExt;
 
         # Convert the xml to a csv file
         pathCSVFull = os.path.join(os.path.split(lblSourceFile)[0],(imageName + "_lbl.csv"))
@@ -296,7 +295,94 @@ def distributeLabels(lblSourceDir, imgSourceDir, lblDir, localPicSize, stride, m
         initDirectories([targetDir,emptyDir])
 
         # Create the .csv files of the labels for the cropped images
-        createLabelCSVForCroppedImages(pathCSVFull,imgSourceFile,targetDir,emptyDir,localPicSize,stride,minLblOverlap,label)
+        createLabelCSVForCroppedImages(pathCSVFull,imgSourceFile,targetDir,emptyDir,localPicSize,stride,label)
+
+
+
+def separateCroppedImagaes(lblTargetDir, imgTargetDir, fldNameEmpty, fldNameNonEmpty):
+  imgEmptyDir = os.path.join(imgTargetDir, fldNameEmpty)
+  lblEmptyDir = os.path.join(lblTargetDir, fldNameEmpty)
+  imgDetectDir = os.path.join(imgTargetDir, fldNameNonEmpty)
+  lblDetectDir = os.path.join(lblTargetDir, fldNameNonEmpty);
+
+  if not os.path.exists(imgEmptyDir):
+    os.makedirs(imgEmptyDir)
+
+  # Iterate over the folders containing the empty cropped images of each raw image
+  for el in os.listdir(lblEmptyDir):
+    if os.path.isdir(os.path.join(lblEmptyDir,el)):
+        picDirTarget = os.path.join(imgEmptyDir, el)
+        picDirSource = os.path.join(imgTargetDir, el)
+
+        # create folder for empty cropped images
+        if not os.path.exists(picDirTarget):
+          os.makedirs(picDirTarget)
+
+        # extract cropped images
+        for lbl in os.listdir(os.path.join(lblEmptyDir, el)):
+          sourcePicPath = os.path.join(picDirSource, lbl.split(".")[0]+".png")
+          targetPicPath = os.path.join(picDirTarget, lbl.split(".")[0]+".png")
+
+          if os.path.exists(sourcePicPath):
+            os.rename(sourcePicPath, targetPicPath)
+
+    # copy the folders containing the nonempty cropped images in a separate directory
+    if not os.path.exists(imgDetectDir):
+      os.makedirs(imgDetectDir)
+
+    for el in os.listdir(imgTargetDir):
+      if os.path.isdir(os.path.join(imgTargetDir, el)) and not el == fldNameEmpty and not el == fldNameNonEmpty:
+        os.rename(os.path.join(imgTargetDir, el), os.path.join(imgTargetDir, fldNameNonEmpty, el))
+
+
+def gatherDirContents(targetDir, fileExt):
+  fileList = []; 
+
+  for el in os.listdir(targetDir):
+    subdirCurrent = os.path.join(targetDir, el)
+
+    if os.path.isdir(subdirCurrent):
+
+      for f in os.listdir(subdirCurrent):
+        if f.split(".")[1] == fileExt:
+          fileList.append(os.path.join(el, f))
+
+  return fileList;
+
+
+def verifyAugmentedFiles(lblTargetDir, imgTargetDir, fldNameEmpty, fldNameNonEmpty, imgFileExt):
+  lblEmptyDir = os.path.join(lblTargetDir, fldNameEmpty)
+  imgEmptyDir = os.path.join(imgTargetDir, fldNameEmpty)
+  lblNonEmptyDir = os.path.join(lblTargetDir, fldNameNonEmpty)
+  imgNonEmptyDir = os.path.join(imgTargetDir, fldNameNonEmpty)
+
+  # Check if nonempty image and label files match
+  lblNonEmpty = gatherDirContents(lblNonEmptyDir, "csv")
+  imgNonEmpty = gatherDirContents(imgNonEmptyDir, imgFileExt)
+
+  if len(lblNonEmpty) != len(imgNonEmpty):
+    raise ValueError("Numer of files in " + lblNonEmptyDir + " noes not match " + imgNonEmptyDir + "!")
+  else:
+    for pic in imgNonEmpty:
+      lblCurrent = pic.split(".")[0] + ".csv"
+
+      if not lblCurrent in lblNonEmpty:
+        raise ValueError("No matching Label file found for " + pic + "!")
+
+  # Check if empty image and label files match
+  lblEmpty = gatherDirContents(lblEmptyDir, "csv")
+  imgEmpty = gatherDirContents(imgEmptyDir, imgFileExt)
+
+  if len(lblEmpty) != len(imgEmpty):
+    raise ValueError("Numer of files in " + lblEmptyDir + " noes not match " + imgEmptyDir + "!")
+  else:
+    for pic in imgEmpty:
+      lblCurrent = pic.split(".")[0] + ".csv"
+
+      if not lblCurrent in lblEmpty:
+        raise ValueError("No matchin Label file found for " + pic +"!")
+
+
 
 
 
@@ -305,10 +391,16 @@ if __name__ == "__main__" :
     pathPictureTarget = r"DataAugmented/Images";
     pathLabelSource = r"DataRaw/Labels";
     pathLabelTarget = r"DataAugmented/Labels";
+    fldNameEmpty = "Empty";
+    fldNameNonEmpty = "Detection"
 
-    generateCroppedImages(pathPictureSource, pathPictureTarget, 640, 640, 100, 100);
+    generateCroppedImages(pathPictureSource, pathPictureTarget, 640, 640, 100, 100, "png")
 
-    distributeLabels(pathLabelSource,pathPictureSource,pathLabelTarget,[640,640],100,10,"HR_building", ".png")
+    distributeLabels(pathLabelSource, pathPictureSource, pathLabelTarget, "Empty", "Detection", [640,640], 100, "HR_building", "png")
+
+    separateCroppedImagaes(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty);
+
+    verifyAugmentedFiles(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty, "png")
 
     
 
