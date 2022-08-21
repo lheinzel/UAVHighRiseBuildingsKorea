@@ -429,20 +429,18 @@ if __name__ == "__main__" :
     print("Target Label Path: " + pathLabelTarget)
  
     print("\nCropping Images...")
-    #generateCroppedImages(pathPictureSource, pathPictureTarget, [640,640], [100,100], [50,50], "png")
+    generateCroppedImages(pathPictureSource, pathPictureTarget, [640,640], [100,100], [50,50], "png")
 
     print("\nDistributing labels...")
     distributeLabels(pathLabelSource, pathPictureSource, pathLabelTarget, "Empty", "Detection", [640,640], 100, "HR_building", "png")
 
     print("\nSeparating cropped images...")
-    #separateCroppedImagaes(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty);
+    separateCroppedImagaes(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty);
 
     print("\nVerifying database...")
-    #verifyAugmentedFiles(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty, "png")
+    verifyAugmentedFiles(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty, "png")
 
     print("\n--- Finished Data Augmentation ---")
-
-    #verifyLabelDistribution(pathPictureSource, pathLabelSource, pathLabelTarget + r"/Detection", [640,640], [100, 100], [50,50],"png")
 
 
 
