@@ -326,13 +326,13 @@ def separateCroppedImagaes(lblTargetDir, imgTargetDir, fldNameEmpty, fldNameNonE
           if os.path.exists(sourcePicPath):
             os.rename(sourcePicPath, targetPicPath)
 
-    # copy the folders containing the nonempty cropped images in a separate directory
-    if not os.path.exists(imgDetectDir):
-      os.makedirs(imgDetectDir)
+  # copy the folders containing the nonempty cropped images in a separate directory
+  if not os.path.exists(imgDetectDir):
+    os.makedirs(imgDetectDir)
 
-    for el in os.listdir(imgTargetDir):
-      if os.path.isdir(os.path.join(imgTargetDir, el)) and not el == fldNameEmpty and not el == fldNameNonEmpty:
-        os.rename(os.path.join(imgTargetDir, el), os.path.join(imgTargetDir, fldNameNonEmpty, el))
+  for el in os.listdir(imgTargetDir):
+    if os.path.isdir(os.path.join(imgTargetDir, el)) and not el == fldNameEmpty and not el == fldNameNonEmpty:
+      os.rename(os.path.join(imgTargetDir, el), os.path.join(imgTargetDir, fldNameNonEmpty, el))
 
 
 def gatherDirContents(targetDir, fileExt):
