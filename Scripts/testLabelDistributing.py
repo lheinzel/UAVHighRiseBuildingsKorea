@@ -58,7 +58,7 @@ def visualizeXBorderImages(indXMax, indYMax, imageDir, labelDir, resultDir, sour
             imageName = sourceName + "_" + str(i) + "-" + str(j)
 
             imagePath = os.path.join(imageDir,(imageName + ".png"))
-            labelPath = os.path.join(labelDir,sourceName,(imageName + ".csv"))
+            labelPath = os.path.join(labelDir,(imageName + ".csv"))
 
             if os.path.exists(imagePath) and os.path.exists(labelPath):
                 visualizeLabeledCroppedImage(imagePath, labelPath, resultDir, sourceName)
