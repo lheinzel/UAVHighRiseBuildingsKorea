@@ -1,5 +1,7 @@
 from asyncio import gather
+from genericpath import isdir
 from multiprocessing.sharedctypes import Value
+from threading import local
 from turtle import end_fill
 from xml.dom import HierarchyRequestErr
 from PIL import Image as Img
@@ -10,15 +12,60 @@ import pandas as pd
 import glob
 import xml.etree.ElementTree as ET
 
-def initDirectories(listDirs):
-    for dir in listDirs:
-        
-        if not os.path.exists(dir):
-            os.mkdir(listDirs);
-        
+
+class GridSlices:
+  def __init__(self, fullRange, dims, strides, minStrides):
+    self.fullRange = fullRange
+    self.dims = dims
+    self.strides = strides
+    self.minStrides = minStrides
+    self.gridDims = [0,0]
+    self.borderStrides = [0,0]
+    self.trucatedX = False
+    self.trucatedY = False
+
+    self.calculateGridDims();
+
+  def calculateGridDims(self):
+    nElX = math.ceil((self.fullRange[0] - self.dims[0])/self.strides[0])+1;
+    nElY = math.ceil((self.fullRange[1] - self.dims[0])/self.strides[1])+1;
+
+    bdrStrideX = (self.fullRange[0] - self.dims[0])%self.strides[0] 
+    bdrStrideY = (self.fullRange[1] - self.dims[1])%self.strides[1]
+
+    if bdrStrideX < self.minStrides[0]:
+      nElX -= 1
+      self.borderStrides[0] = self.strides[0]
+      self.trucatedX = True
+    else:
+      self.borderStrides[0] = (self.fullRange[0] - self.dims[0])%self.strides[0] 
+
+    if bdrStrideY < self.minStrides[1]:
+      nElY -= 1
+      self.borderStrides[1] = self.strides[1]
+      self.trucatedY = True
+    else:
+      self.borderStrides[1] = (self.fullRange[1] - self.dims[1])%self.strides[1]
+
+    self.gridDims = [nElX, nElY]
+
+  def getOffset(self, indX, indY):
+    offsetX = 0
+    offsetY = 0
+
+    if indX > 0:
+      offsetX += (indX-1)*self.strides[0]
+      offsetX += self.borderStrides[0] if indX == self.gridDims[0]-1 else self.strides[0]
+
+    
+    if indY > 0:
+      offsetY += (indY-1)*self.strides[1]
+      offsetY += self.borderStrides[1] if indY == self.gridDims[1]-1 else self.strides[1]
+
+    return [offsetX, offsetY]
 
 
-def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY, imgFileExt):
+def generateCroppedImages(sourcePath, targetPath, imgDims, strides, minStrides, imgFileExt):
     # Get files in directory
     sourceNames = [elem for elem in os.listdir(sourcePath) if elem.split(".")[1] == imgFileExt];
 
@@ -38,54 +85,27 @@ def generateCroppedImages(sourcePath, targetPath, dimX, dimY, strideX, strideY, 
         if not os.path.exists(targetPathCurrent):
             os.mkdir(targetPathCurrent);
 
-        # calculate number of slices in width and heigth direction
-        nSlicesX = math.ceil((imageCurrent.width - dimX)/strideX)+1;
-        nSlicesY = math.ceil((imageCurrent.height - dimY)/strideY)+1;
+        # Create GridSlices Object for the cropping of the image
+        imgSlicesCurrent = GridSlices([imageCurrent.width, imageCurrent.height], imgDims, strides, minStrides)
 
-        # Smaller stride on the borders to utilize the whole image
-        stdRX = (imageCurrent.width - dimX)%strideX;
-        stdRY = (imageCurrent.height - dimY)%strideY;
+        print("Cropping file: " + pictureFile  + "(w,h)=(" + str(imageCurrent.width) + "," + str(imageCurrent.height) + ") to " + str(imgSlicesCurrent.gridDims[0])\
+              + "x" + str(imgSlicesCurrent.gridDims[1]) + " slices. Border strides: stdrRX=" + str(imgSlicesCurrent.borderStrides[0]) + " stdrRY=" + str(imgSlicesCurrent.borderStrides[1])  );
 
-        # If the stride on the border images (difference to the previous image regarding translation) is too small,
-        # do not utilize the border regions
-        if stdRX < strideX/2:
-          stdRX = 0;
-          nSlicesX -= 1;
-
-        if stdRY < strideY/2:
-            stdRY = 0;
-            nSlicesY -= 1;
-
-
-        print("Cropping file: " + pictureFile  + "(w,h)=(" + str(imageCurrent.width) + "," + str(imageCurrent.height) + ") to " + str(nSlicesX) + "x" + str(nSlicesY) + " slices. Border strides: stdrRX=" + str(stdRX) + " stdrRY=" + str(stdRY)  );
-
-        xStart = 0;
-        yStart = 0;
+        
         # Iterate over the two dimensions of the image and create the cropped parts. Save them to directories with
         # the same name as the source
-        for indX in range(nSlicesX):
-            strdXCurrent = strideX if (indX < nSlicesX-2 or stdRX == 0) else stdRX;
+        for indX in range(imgSlicesCurrent.gridDims[0]):
 
-            for indY in range(nSlicesY):
-                strdYCurrent = strideY if (indY < nSlicesY-2 or stdRY == 0) else stdRY;
+            for indY in range(imgSlicesCurrent.gridDims[1]):
                 fNameImgCropped = pictureFile.split(".")[0] + "_" + str(indX) + "-" + str(indY) + "." + imgFileExt;
                 fPathImgCropped = os.path.join(targetPathCurrent,fNameImgCropped);
-                imgCropped = imageCurrent.crop((xStart,yStart,xStart+dimX,yStart+dimY));
+                # Get the offset of the current cropped image w.r.t zero
+                imgOffset = imgSlicesCurrent.getOffset(indX, indY)
+
+                imgCropped = imageCurrent.crop((imgOffset[0],imgOffset[1],imgOffset[0]+imgDims[0],imgOffset[1]+imgDims[1]));
                 imgCropped.save(fPathImgCropped);
 
-                yStart += strdYCurrent;
-
-            xStart += strdXCurrent;
-            yStart = 0;
-
-  
     return;
-
-
-def initDirectories(listDirs):
-    for dir in listDirs:
-        if not os.path.exists(dir):
-            os.makedirs(dir,exist_ok=True);
 
 
 def xml_to_csv(xmlFilePath, targetFilePath):
@@ -107,6 +127,7 @@ def xml_to_csv(xmlFilePath, targetFilePath):
     column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
     xml_df = pd.DataFrame(dataList,columns=column_name)
     xml_df.to_csv(targetFilePath, index=None, sep= ';')
+
 
 
 def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir, localPicSize, stride, label):
@@ -222,7 +243,7 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
     df_out = pd.DataFrame(index=range(dim_y_df), columns = df.columns[:8])
 
     # add fixed values to df
-    df_out[df.columns[0]] = imageName + '_' + str(i) # needs to fit with the actual name
+    df_out[df.columns[0]] = imageName
     df_out[df.columns[1]] = localPicSize[0]
     df_out[df.columns[2]] = localPicSize[1]
     df_out[df.columns[3]] = label
@@ -272,6 +293,12 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
       df_out.to_csv(csvFilepath, index=False, sep=';') 
  
 
+ 
+def initDirectories(listDirs):
+    for dir in listDirs:
+        if not os.path.exists(dir):
+            os.makedirs(dir,exist_ok=True);
+
 
 def distributeLabels(lblSourceDir, imgSourceDir, lblDir, fldNameEmpty, fldNameNonempty ,localPicSize, stride, label, imgFileExt): 
   
@@ -295,7 +322,9 @@ def distributeLabels(lblSourceDir, imgSourceDir, lblDir, fldNameEmpty, fldNameNo
         initDirectories([targetDir,emptyDir])
 
         # Create the .csv files of the labels for the cropped images
-        createLabelCSVForCroppedImages(pathCSVFull,imgSourceFile,targetDir,emptyDir,localPicSize,stride,label)
+        #createLabelCSVForCroppedImages(pathCSVFull,imgSourceFile,targetDir,emptyDir,localPicSize,stride,label)
+
+        createLabelCSVForCroppedImages(pathCSVFull,imgSourceFile,targetDir,emptyDir, localPicSize, stride, label)
 
 
 
@@ -385,7 +414,6 @@ def verifyAugmentedFiles(lblTargetDir, imgTargetDir, fldNameEmpty, fldNameNonEmp
 
 
 
-
 if __name__ == "__main__" :
     pathPictureSource = r"DataRaw/Images";
     pathPictureTarget = r"DataAugmented/Images";
@@ -401,20 +429,20 @@ if __name__ == "__main__" :
     print("Target Label Path: " + pathLabelTarget)
  
     print("\nCropping Images...")
-    #generateCroppedImages(pathPictureSource, pathPictureTarget, 640, 640, 100, 100, "png")
+    #generateCroppedImages(pathPictureSource, pathPictureTarget, [640,640], [100,100], [50,50], "png")
 
     print("\nDistributing labels...")
-    #distributeLabels(pathLabelSource, pathPictureSource, pathLabelTarget, "Empty", "Detection", [640,640], 100, "HR_building", "png")
+    distributeLabels(pathLabelSource, pathPictureSource, pathLabelTarget, "Empty", "Detection", [640,640], 100, "HR_building", "png")
 
     print("\nSeparating cropped images...")
     #separateCroppedImagaes(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty);
 
     print("\nVerifying database...")
-    verifyAugmentedFiles(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty, "png")
+    #verifyAugmentedFiles(pathLabelTarget, pathPictureTarget, fldNameEmpty, fldNameNonEmpty, "png")
 
     print("\n--- Finished Data Augmentation ---")
 
-    
+    #verifyLabelDistribution(pathPictureSource, pathLabelSource, pathLabelTarget + r"/Detection", [640,640], [100, 100], [50,50],"png")
 
 
 
