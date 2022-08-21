@@ -1,2 +1,2 @@
 /.venv/*
-/DataRaw/Labels/*.csv
+/DataAugmented/Images/Test/*
