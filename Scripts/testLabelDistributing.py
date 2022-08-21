@@ -62,7 +62,7 @@ def visualizeDistributedLabeling(imageDir, labelDir, sourceImage, imgRange, resu
 
 if __name__=="__main__":
     sourceImage = r"DataRaw\Images\Sejong_2019_1";
-    imageDir = r"DataAugmented\Images\Sejong_2019_1";
+    imageDir = r"DataAugmented\Images\Detection\Sejong_2019_1";
     sourceFile = r"DataRaw\Labels\Sejong_2019_1.xml";
     labelDir = r"DataAugmented\Labels\Detection";
     testResDir = r"LabelsCropped\LabelsTest";
