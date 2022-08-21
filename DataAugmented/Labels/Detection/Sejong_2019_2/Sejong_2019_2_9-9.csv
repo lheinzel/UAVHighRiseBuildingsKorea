@@ -1,4 +1,5 @@
 filename;width;height;class;xmin;ymin;xmax;ymax
+Sejong_2019_2_9-9_136;640;640;HR_building;31;0;53;6
 Sejong_2019_2_9-9_136;640;640;HR_building;53;0;78;12
 Sejong_2019_2_9-9_136;640;640;HR_building;0;0;17;20
 Sejong_2019_2_9-9_136;640;640;HR_building;25;5;44;27
@@ -12,6 +13,7 @@ Sejong_2019_2_9-9_136;640;640;HR_building;0;44;11;63
 Sejong_2019_2_9-9_136;640;640;HR_building;13;52;32;73
 Sejong_2019_2_9-9_136;640;640;HR_building;31;59;56;80
 Sejong_2019_2_9-9_136;640;640;HR_building;56;69;81;85
+Sejong_2019_2_9-9_136;640;640;HR_building;0;68;1;96
 Sejong_2019_2_9-9_136;640;640;HR_building;1;83;19;112
 Sejong_2019_2_9-9_136;640;640;HR_building;18;83;43;106
 Sejong_2019_2_9-9_136;640;640;HR_building;77;93;99;117
@@ -22,7 +24,12 @@ Sejong_2019_2_9-9_136;640;640;HR_building;34;146;74;175
 Sejong_2019_2_9-9_136;640;640;HR_building;18;110;38;139
 Sejong_2019_2_9-9_136;640;640;HR_building;37;113;60;134
 Sejong_2019_2_9-9_136;640;640;HR_building;0;255;20;283
+Sejong_2019_2_9-9_136;640;640;HR_building;0;282;8;310
+Sejong_2019_2_9-9_136;640;640;HR_building;0;230;9;259
+Sejong_2019_2_9-9_136;640;640;HR_building;0;319;1;337
 Sejong_2019_2_9-9_136;640;640;HR_building;0;321;14;339
+Sejong_2019_2_9-9_136;640;640;HR_building;0;341;0;361
+Sejong_2019_2_9-9_136;640;640;HR_building;0;352;9;369
 Sejong_2019_2_9-9_136;640;640;HR_building;35;328;63;357
 Sejong_2019_2_9-9_136;640;640;HR_building;60;347;88;373
 Sejong_2019_2_9-9_136;640;640;HR_building;29;362;47;382
@@ -51,7 +58,9 @@ Sejong_2019_2_9-9_136;640;640;HR_building;0;481;15;502
 Sejong_2019_2_9-9_136;640;640;HR_building;0;449;14;471
 Sejong_2019_2_9-9_136;640;640;HR_building;0;421;14;443
 Sejong_2019_2_9-9_136;640;640;HR_building;0;518;22;546
+Sejong_2019_2_9-9_136;640;640;HR_building;0;554;0;581
 Sejong_2019_2_9-9_136;640;640;HR_building;0;548;26;569
+Sejong_2019_2_9-9_136;640;640;HR_building;0;578;3;604
 Sejong_2019_2_9-9_136;640;640;HR_building;15;575;30;593
 Sejong_2019_2_9-9_136;640;640;HR_building;0;590;26;614
 Sejong_2019_2_9-9_136;640;640;HR_building;17;605;35;626

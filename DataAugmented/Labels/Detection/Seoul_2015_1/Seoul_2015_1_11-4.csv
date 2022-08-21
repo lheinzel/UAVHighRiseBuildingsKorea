@@ -1,8 +1,11 @@
 filename;width;height;class;xmin;ymin;xmax;ymax
 Seoul_2015_1_11-4_170;640;640;HR_building;12;275;80;303
+Seoul_2015_1_11-4_170;640;640;HR_building;0;266;3;307
 Seoul_2015_1_11-4_170;640;640;HR_building;105;84;172;117
 Seoul_2015_1_11-4_170;640;640;HR_building;130;55;162;86
 Seoul_2015_1_11-4_170;640;640;HR_building;131;12;169;58
+Seoul_2015_1_11-4_170;640;640;HR_building;441;0;502;5
+Seoul_2015_1_11-4_170;640;640;HR_building;223;0;288;2
 Seoul_2015_1_11-4_170;640;640;HR_building;267;0;312;28
 Seoul_2015_1_11-4_170;640;640;HR_building;327;0;391;21
 Seoul_2015_1_11-4_170;640;640;HR_building;337;30;399;72

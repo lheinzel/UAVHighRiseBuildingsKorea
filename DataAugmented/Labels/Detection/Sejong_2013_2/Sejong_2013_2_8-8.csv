@@ -1,5 +1,8 @@
 filename;width;height;class;xmin;ymin;xmax;ymax
+Sejong_2013_2_8-8_121;640;640;HR_building;0;0;5;7
+Sejong_2013_2_8-8_121;640;640;HR_building;12;0;35;4
 Sejong_2013_2_8-8_121;640;640;HR_building;3;21;49;38
+Sejong_2013_2_8-8_121;640;640;HR_building;60;0;80;7
 Sejong_2013_2_8-8_121;640;640;HR_building;61;30;81;50
 Sejong_2013_2_8-8_121;640;640;HR_building;79;1;97;13
 Sejong_2013_2_8-8_121;640;640;HR_building;96;4;109;17
@@ -49,3 +52,5 @@ Sejong_2013_2_8-8_121;640;640;HR_building;0;170;33;192
 Sejong_2013_2_8-8_121;640;640;HR_building;0;201;31;222
 Sejong_2013_2_8-8_121;640;640;HR_building;0;226;33;242
 Sejong_2013_2_8-8_121;640;640;HR_building;0;246;27;267
+Sejong_2013_2_8-8_121;640;640;HR_building;606;0;628;2
+Sejong_2013_2_8-8_121;640;640;HR_building;635;0;640;8

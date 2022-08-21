@@ -1,5 +1,6 @@
 filename;width;height;class;xmin;ymin;xmax;ymax
 Seoul_2018_1_8-0_81;640;640;HR_building;26;568;85;605
+Seoul_2018_1_8-0_81;640;640;HR_building;0;535;2;573
 Seoul_2018_1_8-0_81;640;640;HR_building;0;507;58;546
 Seoul_2018_1_8-0_81;640;640;HR_building;50;509;106;541
 Seoul_2018_1_8-0_81;640;640;HR_building;36;429;75;456
@@ -37,6 +38,7 @@ Seoul_2018_1_8-0_81;640;640;HR_building;139;308;182;354
 Seoul_2018_1_8-0_81;640;640;HR_building;61;494;141;531
 Seoul_2018_1_8-0_81;640;640;HR_building;199;543;283;601
 Seoul_2018_1_8-0_81;640;640;HR_building;116;600;198;640
+Seoul_2018_1_8-0_81;640;640;HR_building;353;632;420;640
 Seoul_2018_1_8-0_81;640;640;HR_building;329;619;370;640
 Seoul_2018_1_8-0_81;640;640;HR_building;379;599;452;640
 Seoul_2018_1_8-0_81;640;640;HR_building;356;584;396;630

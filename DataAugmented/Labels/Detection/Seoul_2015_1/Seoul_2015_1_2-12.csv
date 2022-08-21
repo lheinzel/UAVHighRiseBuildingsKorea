@@ -1,4 +1,5 @@
 filename;width;height;class;xmin;ymin;xmax;ymax
+Seoul_2015_1_2-12_43;640;640;HR_building;0;260;4;313
 Seoul_2015_1_2-12_43;640;640;HR_building;0;299;89;378
 Seoul_2015_1_2-12_43;640;640;HR_building;69;365;135;417
 Seoul_2015_1_2-12_43;640;640;HR_building;180;454;269;506
@@ -11,3 +12,4 @@ Seoul_2015_1_2-12_43;640;640;HR_building;229;387;289;431
 Seoul_2015_1_2-12_43;640;640;HR_building;287;378;354;421
 Seoul_2015_1_2-12_43;640;640;HR_building;307;417;346;452
 Seoul_2015_1_2-12_43;640;640;HR_building;341;411;374;440
+Seoul_2015_1_2-12_43;640;640;HR_building;640;428;640;470

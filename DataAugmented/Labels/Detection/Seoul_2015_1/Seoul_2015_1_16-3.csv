@@ -1,5 +1,7 @@
 filename;width;height;class;xmin;ymin;xmax;ymax
 Seoul_2015_1_16-3_244;640;640;HR_building;16;15;70;58
+Seoul_2015_1_16-3_244;640;640;HR_building;0;0;7;42
+Seoul_2015_1_16-3_244;640;640;HR_building;0;41;2;105
 Seoul_2015_1_16-3_244;640;640;HR_building;176;75;239;120
 Seoul_2015_1_16-3_244;640;640;HR_building;250;64;304;113
 Seoul_2015_1_16-3_244;640;640;HR_building;141;110;212;161

@@ -1,5 +1,6 @@
 filename;width;height;class;xmin;ymin;xmax;ymax
 Sejong_2019_1_9-5_69;640;640;HR_building;0;544;20;568
+Sejong_2019_1_9-5_69;640;640;HR_building;0;524;8;558
 Sejong_2019_1_9-5_69;640;640;HR_building;23;524;43;542
 Sejong_2019_1_9-5_69;640;640;HR_building;42;508;61;529
 Sejong_2019_1_9-5_69;640;640;HR_building;52;488;69;508
@@ -19,11 +20,14 @@ Sejong_2019_1_9-5_69;640;640;HR_building;70;429;92;454
 Sejong_2019_1_9-5_69;640;640;HR_building;0;434;27;464
 Sejong_2019_1_9-5_69;640;640;HR_building;37;405;71;435
 Sejong_2019_1_9-5_69;640;640;HR_building;8;407;43;436
+Sejong_2019_1_9-5_69;640;640;HR_building;0;405;9;439
+Sejong_2019_1_9-5_69;640;640;HR_building;0;390;8;410
 Sejong_2019_1_9-5_69;640;640;HR_building;7;383;25;404
 Sejong_2019_1_9-5_69;640;640;HR_building;23;385;55;405
 Sejong_2019_1_9-5_69;640;640;HR_building;24;374;49;391
 Sejong_2019_1_9-5_69;640;640;HR_building;0;349;34;376
 Sejong_2019_1_9-5_69;640;640;HR_building;0;334;20;361
+Sejong_2019_1_9-5_69;640;640;HR_building;0;310;3;335
 Sejong_2019_1_9-5_69;640;640;HR_building;24;213;56;239
 Sejong_2019_1_9-5_69;640;640;HR_building;8;235;31;256
 Sejong_2019_1_9-5_69;640;640;HR_building;43;232;81;271
@@ -33,6 +37,7 @@ Sejong_2019_1_9-5_69;640;640;HR_building;46;282;67;311
 Sejong_2019_1_9-5_69;640;640;HR_building;29;260;50;288
 Sejong_2019_1_9-5_69;640;640;HR_building;59;302;83;329
 Sejong_2019_1_9-5_69;640;640;HR_building;0;253;17;270
+Sejong_2019_1_9-5_69;640;640;HR_building;0;265;7;282
 Sejong_2019_1_9-5_69;640;640;HR_building;1;285;18;301
 Sejong_2019_1_9-5_69;640;640;HR_building;15;274;30;294
 Sejong_2019_1_9-5_69;640;640;HR_building;33;299;48;317
