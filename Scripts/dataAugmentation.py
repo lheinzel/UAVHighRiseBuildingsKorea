@@ -201,7 +201,7 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
     # name of the image 
     imageName = os.path.split(sourceImage)[1].split(".")[0];
     imageName += ("_" + str(grid_coord[0]) + "-" + str(grid_coord[1]))
-    imageName += os.path.split(sourceImage)[1].split(".")[1]
+    imageName += ("." + os.path.split(sourceImage)[1].split(".")[1])
 
     # get position of recent picture
     # -> check for changed stride 
@@ -287,10 +287,10 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
 
     # exporting csv file 
     if df_out.empty:
-      csvFilepath = os.path.join(emptyDir,(imageName + ".csv"))
+      csvFilepath = os.path.join(emptyDir,(imageName.split(".")[0] + ".csv"))
       df_out.to_csv(csvFilepath, index=False, sep=';') 
     else:
-      csvFilepath = os.path.join(targetDir,(imageName + ".csv"))
+      csvFilepath = os.path.join(targetDir,(imageName.split(".")[0] + ".csv"))
       df_out.to_csv(csvFilepath, index=False, sep=';') 
  
 
