@@ -201,6 +201,7 @@ def createLabelCSVForCroppedImages(sourceFile, sourceImage, targetDir, emptyDir,
     # name of the image 
     imageName = os.path.split(sourceImage)[1].split(".")[0];
     imageName += ("_" + str(grid_coord[0]) + "-" + str(grid_coord[1]))
+    imageName += os.path.split(sourceImage)[1].split(".")[1]
 
     # get position of recent picture
     # -> check for changed stride 
