@@ -152,15 +152,9 @@ def createAnnotationForCroppedImage(lblSrcDf, imgSrcSlices, minOverlap, indX, in
     dfLblCrp["ymin"] = yMinBox
     dfLblCrp["ymax"] = yMaxBox
 
-    if (indX == 1 and indY==2):
-        print(dfLblCrp)
-
     # Delete labels with too small overlap
     dfLblCrp.drop(dfLblCrp[(dfLblCrp["xmax"] - dfLblCrp["xmin"]) < minOverlap].index, inplace=True)
     dfLblCrp.drop(dfLblCrp[(dfLblCrp["ymax"] - dfLblCrp["ymin"]) < minOverlap].index, inplace=True)
-
-    if (indX == 1 and indY==2):
-        print(dfLblCrp)
     
     return dfLblCrp
 
