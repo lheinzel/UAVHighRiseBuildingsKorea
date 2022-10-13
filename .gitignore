@@ -1,2 +1,3 @@
 /.venv/*
 /DataAugmented/Images/Test/*
+/Tools/labelImg-master/libs/_pycache_/*
