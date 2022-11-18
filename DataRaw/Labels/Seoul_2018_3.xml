@@ -1,7 +1,7 @@
 <annotation>
 	<folder>Images</folder>
 	<filename>Seoul_2018_3.png</filename>
-	<path>C:\Users\Linus\Documents\UAVHighRiseBuildingsKorea\DataRaw\Images\Seoul_2018_3.png</path>
+	<path>C:\Users\th-li\Desktop\SS22\Seminar KI\git\UAVHighRiseBuildingsKorea\DataRaw\Images\Seoul_2018_3.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -101,8 +101,8 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>525</xmin>
-			<ymin>999</ymin>
+			<xmin>544</xmin>
+			<ymin>1031</ymin>
 			<xmax>621</xmax>
 			<ymax>1068</ymax>
 		</bndbox>
@@ -137,34 +137,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>95</xmin>
-			<ymin>1047</ymin>
-			<xmax>148</xmax>
-			<ymax>1091</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>29</xmin>
 			<ymin>992</ymin>
 			<xmax>115</xmax>
 			<ymax>1054</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>1</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1</xmin>
-			<ymin>963</ymin>
-			<xmax>56</xmax>
-			<ymax>1003</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -209,7 +185,7 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>138</xmin>
+			<xmin>177</xmin>
 			<ymin>685</ymin>
 			<xmax>230</xmax>
 			<ymax>757</ymax>
@@ -343,20 +319,8 @@
 		<bndbox>
 			<xmin>50</xmin>
 			<ymin>362</ymin>
-			<xmax>134</xmax>
-			<ymax>413</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>49</xmin>
-			<ymin>388</ymin>
-			<xmax>97</xmax>
-			<ymax>444</ymax>
+			<xmax>132</xmax>
+			<ymax>440</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -485,18 +449,6 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>690</xmin>
-			<ymin>370</ymin>
-			<xmax>739</xmax>
-			<ymax>411</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>627</xmin>
 			<ymin>473</ymin>
 			<xmax>697</xmax>
@@ -533,30 +485,6 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>754</xmin>
-			<ymin>401</ymin>
-			<xmax>807</xmax>
-			<ymax>443</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>739</xmin>
-			<ymin>381</ymin>
-			<xmax>778</xmax>
-			<ymax>427</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>704</xmin>
 			<ymin>567</ymin>
 			<xmax>787</xmax>
@@ -573,54 +501,6 @@
 			<ymin>537</ymin>
 			<xmax>799</xmax>
 			<ymax>573</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>568</xmin>
-			<ymin>713</ymin>
-			<xmax>626</xmax>
-			<ymax>760</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>721</xmin>
-			<ymin>721</ymin>
-			<xmax>780</xmax>
-			<ymax>758</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>725</xmin>
-			<ymin>763</ymin>
-			<xmax>785</xmax>
-			<ymax>800</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>1</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>702</xmin>
-			<ymin>1374</ymin>
-			<xmax>756</xmax>
-			<ymax>1413</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -665,34 +545,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1185</xmin>
-			<ymin>1208</ymin>
-			<xmax>1231</xmax>
-			<ymax>1232</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>1176</xmin>
 			<ymin>1166</ymin>
 			<xmax>1294</xmax>
 			<ymax>1246</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1254</xmin>
-			<ymin>1110</ymin>
-			<xmax>1306</xmax>
-			<ymax>1156</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -809,114 +665,6 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>1675</xmin>
-			<ymin>1219</ymin>
-			<xmax>1725</xmax>
-			<ymax>1267</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1161</xmin>
-			<ymin>997</ymin>
-			<xmax>1263</xmax>
-			<ymax>1078</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1614</xmin>
-			<ymin>778</ymin>
-			<xmax>1660</xmax>
-			<ymax>820</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1326</xmin>
-			<ymin>260</ymin>
-			<xmax>1437</xmax>
-			<ymax>318</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1437</xmin>
-			<ymin>291</ymin>
-			<xmax>1533</xmax>
-			<ymax>331</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1402</xmin>
-			<ymin>335</ymin>
-			<xmax>1477</xmax>
-			<ymax>369</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1416</xmin>
-			<ymin>361</ymin>
-			<xmax>1505</xmax>
-			<ymax>398</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1178</xmin>
-			<ymin>214</ymin>
-			<xmax>1315</xmax>
-			<ymax>272</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>1786</xmin>
-			<ymin>552</ymin>
-			<xmax>1897</xmax>
-			<ymax>678</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>2290</xmin>
 			<ymin>716</ymin>
 			<xmax>2408</xmax>
@@ -941,46 +689,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2348</xmin>
-			<ymin>680</ymin>
-			<xmax>2397</xmax>
-			<ymax>723</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2419</xmin>
-			<ymin>663</ymin>
-			<xmax>2493</xmax>
-			<ymax>734</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>2438</xmin>
 			<ymin>619</ymin>
 			<xmax>2505</xmax>
 			<ymax>686</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2372</xmin>
-			<ymin>818</ymin>
-			<xmax>2448</xmax>
-			<ymax>884</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1013,22 +725,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2494</xmin>
-			<ymin>553</ymin>
+			<xmin>2515</xmin>
+			<ymin>574</ymin>
 			<xmax>2591</xmax>
 			<ymax>642</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2653</xmin>
-			<ymin>558</ymin>
-			<xmax>2765</xmax>
-			<ymax>666</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1061,58 +761,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2093</xmin>
-			<ymin>992</ymin>
-			<xmax>2194</xmax>
-			<ymax>1083</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2108</xmin>
-			<ymin>957</ymin>
+			<xmin>2116</xmin>
+			<ymin>959</ymin>
 			<xmax>2199</xmax>
 			<ymax>1036</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2247</xmin>
-			<ymin>853</ymin>
-			<xmax>2350</xmax>
-			<ymax>951</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2243</xmin>
-			<ymin>907</ymin>
-			<xmax>2327</xmax>
-			<ymax>973</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2208</xmin>
-			<ymin>943</ymin>
-			<xmax>2288</xmax>
-			<ymax>1015</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1133,18 +785,6 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2159</xmin>
-			<ymin>877</ymin>
-			<xmax>2223</xmax>
-			<ymax>941</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>2176</xmin>
 			<ymin>852</ymin>
 			<xmax>2253</xmax>
@@ -1157,58 +797,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2227</xmin>
-			<ymin>775</ymin>
+			<xmin>2241</xmin>
+			<ymin>796</ymin>
 			<xmax>2313</xmax>
 			<ymax>868</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2619</xmin>
-			<ymin>1064</ymin>
-			<xmax>2756</xmax>
-			<ymax>1159</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2753</xmin>
-			<ymin>1257</ymin>
-			<xmax>2823</xmax>
-			<ymax>1319</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2515</xmin>
-			<ymin>932</ymin>
-			<xmax>2625</xmax>
-			<ymax>1042</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2858</xmin>
-			<ymin>976</ymin>
-			<xmax>2938</xmax>
-			<ymax>1038</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1221,66 +813,6 @@
 			<ymin>474</ymin>
 			<xmax>2949</xmax>
 			<ymax>625</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2789</xmin>
-			<ymin>1299</ymin>
-			<xmax>2875</xmax>
-			<ymax>1383</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>1</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2784</xmin>
-			<ymin>1377</ymin>
-			<xmax>2851</xmax>
-			<ymax>1413</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2811</xmin>
-			<ymin>1194</ymin>
-			<xmax>2923</xmax>
-			<ymax>1283</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2861</xmin>
-			<ymin>1163</ymin>
-			<xmax>2951</xmax>
-			<ymax>1231</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>2745</xmin>
-			<ymin>1102</ymin>
-			<xmax>2883</xmax>
-			<ymax>1190</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1315,8 +847,8 @@
 		<bndbox>
 			<xmin>3153</xmin>
 			<ymin>1268</ymin>
-			<xmax>3309</xmax>
-			<ymax>1355</ymax>
+			<xmax>3255</xmax>
+			<ymax>1354</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1327,8 +859,8 @@
 		<bndbox>
 			<xmin>3224</xmin>
 			<ymin>1217</ymin>
-			<xmax>3356</xmax>
-			<ymax>1299</ymax>
+			<xmax>3309</xmax>
+			<ymax>1287</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1433,10 +965,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>3420</xmin>
+			<xmin>3436</xmin>
 			<ymin>1134</ymin>
 			<xmax>3500</xmax>
-			<ymax>1208</ymax>
+			<ymax>1181</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1493,22 +1025,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>3345</xmin>
-			<ymin>1054</ymin>
-			<xmax>3403</xmax>
-			<ymax>1111</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>3317</xmin>
 			<ymin>1034</ymin>
-			<xmax>3354</xmax>
-			<ymax>1073</ymax>
+			<xmax>3402</xmax>
+			<ymax>1112</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1622,22 +1142,10 @@
 	<object>
 		<name>HR_building</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3517</xmin>
-			<ymin>1373</ymin>
-			<xmax>3563</xmax>
-			<ymax>1413</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>3611</xmin>
+			<xmin>3607</xmin>
 			<ymin>1262</ymin>
 			<xmax>3693</xmax>
 			<ymax>1333</ymax>
@@ -1697,22 +1205,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>3824</xmin>
+			<xmin>3805</xmin>
 			<ymin>1331</ymin>
 			<xmax>3892</xmax>
-			<ymax>1389</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3586</xmin>
-			<ymin>1322</ymin>
-			<xmax>3633</xmax>
-			<ymax>1366</ymax>
+			<ymax>1392</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1781,58 +1277,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>3972</xmin>
-			<ymin>1128</ymin>
-			<xmax>4030</xmax>
-			<ymax>1191</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3967</xmin>
-			<ymin>1016</ymin>
-			<xmax>4010</xmax>
-			<ymax>1072</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>3926</xmin>
 			<ymin>950</ymin>
 			<xmax>4005</xmax>
 			<ymax>1024</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3920</xmin>
-			<ymin>906</ymin>
-			<xmax>4000</xmax>
-			<ymax>986</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3927</xmin>
-			<ymin>878</ymin>
-			<xmax>3993</xmax>
-			<ymax>930</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -1877,166 +1325,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>3792</xmin>
-			<ymin>787</ymin>
-			<xmax>3842</xmax>
-			<ymax>830</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3793</xmin>
-			<ymin>896</ymin>
-			<xmax>3837</xmax>
-			<ymax>934</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4036</xmin>
-			<ymin>1093</ymin>
-			<xmax>4136</xmax>
-			<ymax>1147</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4068</xmin>
-			<ymin>1085</ymin>
-			<xmax>4108</xmax>
-			<ymax>1119</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
 			<xmin>4010</xmin>
 			<ymin>981</ymin>
 			<xmax>4085</xmax>
 			<ymax>1034</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3803</xmin>
-			<ymin>682</ymin>
-			<xmax>3930</xmax>
-			<ymax>786</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3529</xmin>
-			<ymin>689</ymin>
-			<xmax>3621</xmax>
-			<ymax>762</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3699</xmin>
-			<ymin>685</ymin>
-			<xmax>3779</xmax>
-			<ymax>742</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3589</xmin>
-			<ymin>650</ymin>
-			<xmax>3647</xmax>
-			<ymax>697</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3976</xmin>
-			<ymin>638</ymin>
-			<xmax>4061</xmax>
-			<ymax>748</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4063</xmin>
-			<ymin>702</ymin>
-			<xmax>4147</xmax>
-			<ymax>778</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4143</xmin>
-			<ymin>714</ymin>
-			<xmax>4197</xmax>
-			<ymax>772</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3909</xmin>
-			<ymin>619</ymin>
-			<xmax>3992</xmax>
-			<ymax>693</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3999</xmin>
-			<ymin>425</ymin>
-			<xmax>4060</xmax>
-			<ymax>471</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2129,22 +1421,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>3763</xmin>
-			<ymin>170</ymin>
-			<xmax>3914</xmax>
-			<ymax>268</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>3844</xmin>
-			<ymin>33</ymin>
-			<xmax>3998</xmax>
-			<ymax>194</ymax>
+			<xmin>3839</xmin>
+			<ymin>72</ymin>
+			<xmax>3944</xmax>
+			<ymax>133</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2191,8 +1471,8 @@
 		<bndbox>
 			<xmin>4289</xmin>
 			<ymin>1</ymin>
-			<xmax>4529</xmax>
-			<ymax>128</ymax>
+			<xmax>4463</xmax>
+			<ymax>118</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2217,18 +1497,6 @@
 			<ymin>368</ymin>
 			<xmax>5070</xmax>
 			<ymax>408</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4984</xmin>
-			<ymin>322</ymin>
-			<xmax>5023</xmax>
-			<ymax>373</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2333,34 +1601,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>4681</xmin>
-			<ymin>575</ymin>
-			<xmax>4741</xmax>
-			<ymax>626</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4282</xmin>
-			<ymin>626</ymin>
-			<xmax>4396</xmax>
-			<ymax>715</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4191</xmin>
-			<ymin>676</ymin>
-			<xmax>4291</xmax>
-			<ymax>748</ymax>
+			<xmin>4201</xmin>
+			<ymin>680</ymin>
+			<xmax>4280</xmax>
+			<ymax>744</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2373,18 +1617,6 @@
 			<ymin>717</ymin>
 			<xmax>4409</xmax>
 			<ymax>780</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4381</xmin>
-			<ymin>687</ymin>
-			<xmax>4449</xmax>
-			<ymax>754</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2457,30 +1689,6 @@
 			<ymin>552</ymin>
 			<xmax>5250</xmax>
 			<ymax>614</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4191</xmin>
-			<ymin>1056</ymin>
-			<xmax>4283</xmax>
-			<ymax>1119</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>4184</xmin>
-			<ymin>1283</ymin>
-			<xmax>4253</xmax>
-			<ymax>1361</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2573,9 +1781,9 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>5245</xmin>
-			<ymin>1286</ymin>
-			<xmax>5322</xmax>
+			<xmin>5238</xmin>
+			<ymin>1325</ymin>
+			<xmax>5303</xmax>
 			<ymax>1383</ymax>
 		</bndbox>
 	</object>
@@ -2611,20 +1819,8 @@
 		<bndbox>
 			<xmin>5314</xmin>
 			<ymin>1266</ymin>
-			<xmax>5395</xmax>
-			<ymax>1371</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>1</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>5312</xmin>
-			<ymin>1347</ymin>
-			<xmax>5390</xmax>
-			<ymax>1413</ymax>
+			<xmax>5389</xmax>
+			<ymax>1369</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2635,32 +1831,8 @@
 		<bndbox>
 			<xmin>5043</xmin>
 			<ymin>1190</ymin>
-			<xmax>5122</xmax>
-			<ymax>1258</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>5102</xmin>
-			<ymin>1187</ymin>
-			<xmax>5166</xmax>
-			<ymax>1262</ymax>
-		</bndbox>
-	</object>
-	<object>
-		<name>HR_building</name>
-		<pose>Unspecified</pose>
-		<truncated>0</truncated>
-		<difficult>0</difficult>
-		<bndbox>
-			<xmin>5165</xmin>
-			<ymin>1187</ymin>
-			<xmax>5244</xmax>
-			<ymax>1248</ymax>
+			<xmax>5240</xmax>
+			<ymax>1254</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2741,7 +1913,7 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>5320</xmin>
+			<xmin>5328</xmin>
 			<ymin>447</ymin>
 			<xmax>5390</xmax>
 			<ymax>526</ymax>
@@ -2766,9 +1938,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>5217</xmin>
-			<ymin>444</ymin>
-			<xmax>5298</xmax>
-			<ymax>524</ymax>
+			<ymin>472</ymin>
+			<xmax>5283</xmax>
+			<ymax>528</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2779,8 +1951,8 @@
 		<bndbox>
 			<xmin>5186</xmin>
 			<ymin>399</ymin>
-			<xmax>5247</xmax>
-			<ymax>454</ymax>
+			<xmax>5255</xmax>
+			<ymax>474</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2789,10 +1961,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>5228</xmin>
+			<xmin>5226</xmin>
 			<ymin>394</ymin>
 			<xmax>5273</xmax>
-			<ymax>438</ymax>
+			<ymax>433</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -2913,6 +2085,474 @@
 			<ymin>244</ymin>
 			<xmax>5330</xmax>
 			<ymax>290</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>379</ymin>
+			<xmax>25</xmax>
+			<ymax>417</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>262</xmin>
+			<ymin>77</ymin>
+			<xmax>300</xmax>
+			<ymax>110</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>284</xmin>
+			<ymin>132</ymin>
+			<xmax>344</xmax>
+			<ymax>178</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>139</xmin>
+			<ymin>692</ymin>
+			<xmax>189</xmax>
+			<ymax>734</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>524</xmin>
+			<ymin>1001</ymin>
+			<xmax>563</xmax>
+			<ymax>1032</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1807</xmin>
+			<ymin>1214</ymin>
+			<xmax>1873</xmax>
+			<ymax>1272</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1869</xmin>
+			<ymin>1150</ymin>
+			<xmax>1942</xmax>
+			<ymax>1203</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1825</xmin>
+			<ymin>1117</ymin>
+			<xmax>1881</xmax>
+			<ymax>1172</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2094</xmin>
+			<ymin>1032</ymin>
+			<xmax>2145</xmax>
+			<ymax>1078</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2051</xmin>
+			<ymin>971</ymin>
+			<xmax>2110</xmax>
+			<ymax>1021</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2099</xmin>
+			<ymin>994</ymin>
+			<xmax>2192</xmax>
+			<ymax>1071</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2232</xmin>
+			<ymin>944</ymin>
+			<xmax>2284</xmax>
+			<ymax>995</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2199</xmin>
+			<ymin>952</ymin>
+			<xmax>2255</xmax>
+			<ymax>1002</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2244</xmin>
+			<ymin>915</ymin>
+			<xmax>2299</xmax>
+			<ymax>973</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2266</xmin>
+			<ymin>909</ymin>
+			<xmax>2320</xmax>
+			<ymax>957</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2250</xmin>
+			<ymin>856</ymin>
+			<xmax>2345</xmax>
+			<ymax>941</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2583</xmin>
+			<ymin>659</ymin>
+			<xmax>2647</xmax>
+			<ymax>721</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3157</xmin>
+			<ymin>1035</ymin>
+			<xmax>3198</xmax>
+			<ymax>1067</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3422</xmin>
+			<ymin>1145</ymin>
+			<xmax>3478</xmax>
+			<ymax>1202</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3278</xmin>
+			<ymin>1217</ymin>
+			<xmax>3356</xmax>
+			<ymax>1293</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3228</xmin>
+			<ymin>1272</ymin>
+			<xmax>3303</xmax>
+			<ymax>1346</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2930</xmin>
+			<ymin>397</ymin>
+			<xmax>2994</xmax>
+			<ymax>454</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4292</xmin>
+			<ymin>749</ymin>
+			<xmax>4343</xmax>
+			<ymax>790</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5266</xmin>
+			<ymin>1289</ymin>
+			<xmax>5319</xmax>
+			<ymax>1355</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5346</xmin>
+			<ymin>1391</ymin>
+			<xmax>5390</xmax>
+			<ymax>1413</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5319</xmin>
+			<ymin>1347</ymin>
+			<xmax>5358</xmax>
+			<ymax>1388</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5316</xmin>
+			<ymin>1376</ymin>
+			<xmax>5350</xmax>
+			<ymax>1406</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3272</xmin>
+			<ymin>367</ymin>
+			<xmax>3324</xmax>
+			<ymax>387</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3267</xmin>
+			<ymin>387</ymin>
+			<xmax>3324</xmax>
+			<ymax>412</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3237</xmin>
+			<ymin>367</ymin>
+			<xmax>3274</xmax>
+			<ymax>406</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4177</xmin>
+			<ymin>682</ymin>
+			<xmax>4238</xmax>
+			<ymax>747</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4271</xmin>
+			<ymin>636</ymin>
+			<xmax>4341</xmax>
+			<ymax>715</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4289</xmin>
+			<ymin>627</ymin>
+			<xmax>4370</xmax>
+			<ymax>707</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4334</xmin>
+			<ymin>635</ymin>
+			<xmax>4393</xmax>
+			<ymax>694</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4523</xmin>
+			<ymin>581</ymin>
+			<xmax>4608</xmax>
+			<ymax>655</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4931</xmin>
+			<ymin>432</ymin>
+			<xmax>4968</xmax>
+			<ymax>457</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4974</xmin>
+			<ymin>434</ymin>
+			<xmax>5014</xmax>
+			<ymax>452</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5249</xmin>
+			<ymin>476</ymin>
+			<xmax>5299</xmax>
+			<ymax>520</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>HR_building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5320</xmin>
+			<ymin>474</ymin>
+			<xmax>5368</xmax>
+			<ymax>521</ymax>
 		</bndbox>
 	</object>
 </annotation>
